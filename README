@@ -1,0 +1,13 @@
+Am facut tema in C++.
+
+Am facut o structura care sa contina date de care are nevoie fiecare thread, 
+in special variabilele care s-ar fi declarat global. Am facut o functie in 
+care intra threadurile map si alta functie in care intra threadurile reduce. 
+Threadurile map iau fiecare cate un fisier pe rand, dinamic, folosind un 
+mutex care incrementeaza id-ul fisierului pe care il iau. In functia map 
+parcurg fisierul cu id-ul dat si bag fiecare cuvant intr-un hashmap. In 
+functia in care intra threadurile reduce, am impartit literele astfel incat 
+fiecare thread sa ia anumite litere ca sa se realizeze totul in paralel. 
+In functia care se ocupa de operatia de reduce am creat un hashmap cu toate 
+hashmapurile mici realizate de threadurile map, am creat un vector cu toate 
+cuvintele pe care l-am sortat si dupa am scris in fisiere.
